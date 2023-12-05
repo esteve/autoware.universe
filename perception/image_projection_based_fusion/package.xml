@@ -16,7 +16,7 @@
 
   <depend>autoware_auto_perception_msgs</depend>
   <depend>autoware_point_types</depend>
-  <depend>cuda</depend>
+  <depend>cuda_virtual</depend>
   <depend>cv_bridge</depend>
   <depend>euclidean_cluster</depend>
   <depend>image_transport</depend>
