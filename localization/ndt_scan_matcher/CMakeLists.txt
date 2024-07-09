@@ -25,6 +25,13 @@ endif()
 find_package(PCL REQUIRED COMPONENTS common io registration)
 include_directories(${PCL_INCLUDE_DIRS})
 
+find_package(OpenMP)
+if(OpenMP_CXX_FOUND)
+  target_link_libraries(${PROJECT_NAME} PUBLIC OpenMP::OpenMP_CXX)
+else()
+  message(WARNING "OpenMP not found")
+endif()
+
 ament_auto_add_library(${PROJECT_NAME} SHARED
   src/diagnostics_module.cpp
   src/map_update_module.cpp
