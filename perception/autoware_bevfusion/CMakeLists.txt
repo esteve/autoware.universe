@@ -10,7 +10,7 @@ option(CUDA_VERBOSE "Verbose output of CUDA modules" OFF)
 
 # set flags for CUDA availability
 option(CUDA_AVAIL "CUDA available" OFF)
-find_package(CUDA)
+find_package(CUDA REQUIRED)
 if(CUDA_FOUND)
   find_library(CUBLAS_LIBRARIES cublas HINTS
     ${CUDA_TOOLKIT_ROOT_DIR}/lib64
@@ -71,8 +71,8 @@ endif()
 # set flags for spconv availability
 option(SPCONV_AVAIL "spconv available" OFF)
 # try to find spconv
-find_package(cumm)
-find_package(spconv)
+find_package(cumm REQUIRED)
+find_package(spconv REQUIRED)
 if(${cumm_FOUND} AND ${spconv_FOUND})
   message("spconv is available!")
   set(SPCONV_AVAIL ON)
