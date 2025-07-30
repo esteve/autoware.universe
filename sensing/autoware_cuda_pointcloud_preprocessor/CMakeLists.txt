@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.14)
 project(autoware_cuda_pointcloud_preprocessor)
 
 find_package(ament_cmake_auto REQUIRED)
-find_package(CUDA)
+find_package(CUDA REQUIRED)
 
 if(NOT ${CUDA_FOUND})
   message(WARNING "cuda was not found, so the autoware_cuda_pointcloud_preprocessor package will not be built.")
