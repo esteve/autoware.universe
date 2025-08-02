@@ -28,10 +28,6 @@ if(${CUDA_FOUND})
       ${CUDA_INCLUDE_DIRS}
   )
 
-  # NOTE(esteve): avoid "symbol `fatbinData' is already defined" errors
-  set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fno-lto")
-  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fno-lto")
-
   # cSpell: ignore expt gencode
   list(APPEND CUDA_NVCC_FLAGS --expt-relaxed-constexpr -diag-suppress 20012 --compiler-options -fPIC)
   list(APPEND CUDA_NVCC_FLAGS -gencode arch=compute_75,code=sm_75)
